@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="963.0" prefWidth="1229.0" stylesheets="@styl.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kierownik">
+    <children>
+        <MenuBar prefHeight="29.0" prefWidth="1229.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Opcje">
+                    <items>
+                        <MenuItem fx:id="zamknij" mnemonicParsing="false" text="Zamknij program" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Pomoc">
+                    <items>
+                        <MenuItem fx:id="opis" mnemonicParsing="false" text="Opis zakładek" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="O programie">
+                    <items>
+                        <MenuItem fx:id="autorzy" mnemonicParsing="false" text="Autorzy" />
+                        <MenuItem fx:id="wersja" mnemonicParsing="false" text="Wersja programu" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TabPane layoutY="29.0" prefHeight="935.0" prefWidth="1229.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Dokumenty, poczta i wykresy">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="963.0" prefWidth="1229.0">
+                            <children>
+                                <TabPane prefHeight="963.0" prefWidth="1229.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="Podgląd dokumentów">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="752.0" prefWidth="1230.0" styleClass="background">
+                                                    <children>
+                                                        <SplitPane layoutX="-2.0" layoutY="-1.0" prefHeight="877.0" prefWidth="1229.0">
+                                                            <items>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="875.0" prefWidth="428.0" styleClass="background">
+                                                                    <children>
+                                                                        <GridPane layoutY="12.0" prefHeight="289.0" prefWidth="201.0">
+                                                                            <columnConstraints>
+                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            </columnConstraints>
+                                                                            <rowConstraints>
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            </rowConstraints>
+                                                                            <children>
+                                                                                <JFXButton fx:id="otwurz" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" text="Otwórz dokument" />
+                                                                                <JFXButton fx:id="wstecz" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" text="Wyloguj" GridPane.rowIndex="2" />
+                                                                                <JFXButton fx:id="usun_zaznaczone_dokumenty" prefHeight="50.0" prefWidth="180.0" text="Usuń zaznaczone dokumenty" GridPane.rowIndex="1" />
+                                                                            </children>
+                                                                        </GridPane>
+                                                                        <WebView fx:id="dok1" layoutX="201.0" layoutY="14.0" prefHeight="290.0" prefWidth="1009.0" />
+                                                                        <TableView fx:id="tabela4" layoutX="480.0" layoutY="320.0" prefHeight="541.0" prefWidth="731.0">
+                                                                            <columns>
+                                                                                <TableColumn fx:id="kolumna28" prefWidth="96.0" text="Pracownik" />
+                                                                                <TableColumn fx:id="kolumna29" prefWidth="117.0" text="Tytuł" />
+                                                                                <TableColumn fx:id="kolumna30" prefWidth="130.0" text="Data" />
+                                                                                <TableColumn fx:id="kolumna31" prefWidth="135.0" text="Otwórz dokument" />
+                                                                                <TableColumn fx:id="kolumna32" prefWidth="133.0" text="Pobierz dokument" />
+                                                                                <TableColumn fx:id="kolumna33" prefWidth="70.0" text="Zaznacz" />
+                                                                                <TableColumn fx:id="kolumna34" prefWidth="130.0" text="Usuń dokument" />
+                                                                            </columns>
+                                                                        </TableView>
+                                                                        <WebView fx:id="dok2" layoutX="14.0" layoutY="320.0" prefHeight="542.0" prefWidth="458.0" />
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </items>
+                                                        </SplitPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Wyślij wiadomość">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label layoutX="515.0" layoutY="5.0" prefHeight="48.0" prefWidth="199.0" text="Wiadomość">
+                                                            <font>
+                                                                <Font name="System Bold" size="36.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <HTMLEditor fx:id="wiadomość2" layoutX="15.0" layoutY="202.0" prefHeight="656.0" prefWidth="1199.0" />
+                                                        <GridPane layoutX="17.0" layoutY="60.0" prefHeight="45.0" prefWidth="1196.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <JFXButton fx:id="księgowy1" mnemonicParsing="false" prefHeight="35.0" prefWidth="321.0" text="Księgowość" GridPane.columnIndex="1" />
+                                                                <JFXButton fx:id="brygadzista1" mnemonicParsing="false" prefHeight="35.0" prefWidth="321.0" text="Brygadzista" GridPane.columnIndex="2" />
+                                                                <JFXButton fx:id="magazynier1" mnemonicParsing="false" prefHeight="35.0" prefWidth="321.0" text="Magazynier" GridPane.columnIndex="3" />
+                                                                <JFXButton fx:id="zalacznik" prefHeight="35.0" prefWidth="286.0" text="Dodaj dokument do załącznika" />
+                                                                <JFXButton fx:id="pracownik1" prefHeight="35.0" prefWidth="263.0" text="Pracownicy" GridPane.columnIndex="4" />
+                                                            </children>
+                                                        </GridPane>
+                                                        <Label layoutX="17.0" layoutY="155.0" prefHeight="29.0" prefWidth="170.0" text="Tytuł wiadomość:">
+                                                            <font>
+                                                                <Font name="System Bold" size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <JFXTextField fx:id="tytul_wiadomosc" layoutX="188.0" layoutY="147.0" prefHeight="38.0" prefWidth="1024.0" unFocusColor="#e2e2e2">
+                                                            <font>
+                                                                <Font name="System Bold" size="20.0" />
+                                                            </font>
+                                                        </JFXTextField>
+                                                        <GridPane layoutX="17.0" layoutY="111.0" prefHeight="39.0" prefWidth="1197.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <JFXButton fx:id="wiadomość4" mnemonicParsing="false" prefHeight="35.0" prefWidth="248.0" text="Wyślij do pracownika" GridPane.columnIndex="4" />
+                                                                <ComboBox fx:id="dzialbox"  prefHeight="32.0" prefWidth="315.0" promptText="Wybierz dział" styleClass="input"  GridPane.columnIndex="1" />
+                                                                <ComboBox fx:id="pracownikbox" prefHeight="32.0" prefWidth="309.0" promptText="Wybierz identyfikator pracownika"  GridPane.columnIndex="2" />
+                                                                <JFXTextField fx:id="imie_nazwisko" prefHeight="23.0" prefWidth="236.0" unFocusColor="#e2e2e2" GridPane.columnIndex="3" />
+                                                                <JFXTextField fx:id="droga_zalacznik" prefHeight="33.0" prefWidth="251.0" unFocusColor="#e2e2e2" />
+                                                            </children>
+                                                        </GridPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Wiadomości działy">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                            </children>
+                                                        </AnchorPane>
+                                                        <TableView fx:id="tabela5" layoutX="585.0" layoutY="26.0" prefHeight="760.0" prefWidth="642.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="kolumna35" prefWidth="108.0" text="Tytuł" />
+                                                      <TableColumn fx:id="kolumna36" prefWidth="160.0" text="Dział" />
+                                                      <TableColumn fx:id="kolumna37" prefWidth="146.0" text="Data" />
+                                                      <TableColumn fx:id="kolumna38" minWidth="0.0" prefWidth="67.0" text="Zaznacz" />
+                                                      <TableColumn fx:id="kolumna39" prefWidth="138.0" text="Pobierz wiadomość" />
+                                                      <TableColumn fx:id="kolumna40" prefWidth="138.0" text="Usuń wiadomość" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <GridPane layoutX="12.0" layoutY="24.0" prefHeight="799.0" prefWidth="558.0">
+                                                            <children>
+                                                                <GridPane GridPane.rowIndex="1">
+                                                                    <children>
+                                                                        <Label text="Tytuł:">
+                                                                            <font>
+                                                                                <Font name="System Bold" size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <JFXTextField fx:id="tw2" prefHeight="33.0" prefWidth="489.0" GridPane.columnIndex="1" />
+                                                                    </children>
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="53.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="522.0" minWidth="10.0" prefWidth="505.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                </GridPane>
+                                                                <GridPane prefHeight="543.0" prefWidth="584.0" GridPane.rowIndex="2">
+                                                                    <children>
+                                                                        <Label text="Data i godzina:">
+                                                                            <font>
+                                                                                <Font name="System Bold" size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <JFXTextField fx:id="dtw2" prefHeight="33.0" prefWidth="402.0" GridPane.columnIndex="1" />
+                                                                    </children>
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="134.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="447.0" minWidth="10.0" prefWidth="424.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                </GridPane>
+                                                                <GridPane prefHeight="108.0" prefWidth="577.0">
+                                                                    <children>
+                                                                        <Label text="Treść">
+                                                                            <font>
+                                                                                <Font name="System Bold" size="27.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                </GridPane>
+                                                                <WebView fx:id="strony2" prefHeight="655.0" prefWidth="574.0" GridPane.rowIndex="3" />
+                                                            </children>
+                                                            <columnConstraints>
+                                                                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints maxHeight="162.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints maxHeight="331.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints maxHeight="621.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints maxHeight="695.0" minHeight="10.0" prefHeight="655.0" vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                        </GridPane>
+                                                        <JFXButton fx:id="wiadomosc_usun2" layoutX="817.0" layoutY="806.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="179.0" text="Usuń wiadomość" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Poczta">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <SplitPane dividerPositions="0.49391727493917276" layoutX="-2.0" layoutY="-1.0" prefHeight="877.0" prefWidth="1235.0">
+                                                            <items>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="875.0" prefWidth="751.0">
+                                                                    <children>
+                                                                        <GridPane layoutX="12.0" layoutY="18.0" prefHeight="803.0" prefWidth="584.0">
+                                                                            <columnConstraints>
+                                                                                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            </columnConstraints>
+                                                                            <rowConstraints>
+                                                                                <RowConstraints maxHeight="162.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints maxHeight="162.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints maxHeight="331.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints maxHeight="621.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints maxHeight="695.0" minHeight="10.0" prefHeight="651.0" vgrow="SOMETIMES" />
+                                                                            </rowConstraints>
+                                                                            <children>
+                                                                                <GridPane GridPane.rowIndex="2">
+                                                                                    <columnConstraints>
+                                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="55.0" />
+                                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="522.0" minWidth="10.0" prefWidth="522.0" />
+                                                                                    </columnConstraints>
+                                                                                    <rowConstraints>
+                                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                    </rowConstraints>
+                                                                                    <children>
+                                                                                        <Label text="Tytuł:">
+                                                                                            <font>
+                                                                                                <Font name="System Bold" size="18.0" />
+                                                                                            </font>
+                                                                                        </Label>
+                                                                                        <JFXTextField fx:id="tw" GridPane.columnIndex="1" />
+                                                                                    </children>
+                                                                                </GridPane>
+                                                                                <GridPane prefHeight="543.0" prefWidth="584.0" GridPane.rowIndex="3">
+                                                                                    <columnConstraints>
+                                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="129.0" />
+                                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="447.0" minWidth="10.0" prefWidth="439.0" />
+                                                                                    </columnConstraints>
+                                                                                    <rowConstraints>
+                                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                    </rowConstraints>
+                                                                                    <children>
+                                                                                        <Label text="Data i godzina:">
+                                                                                            <font>
+                                                                                                <Font name="System Bold" size="18.0" />
+                                                                                            </font>
+                                                                                        </Label>
+                                                                                        <JFXTextField fx:id="dtw" GridPane.columnIndex="1" />
+                                                                                    </children>
+                                                                                </GridPane>
+                                                                                <GridPane prefHeight="108.0" prefWidth="577.0">
+                                                                                    <columnConstraints>
+                                                                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                    </columnConstraints>
+                                                                                    <rowConstraints>
+                                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                    </rowConstraints>
+                                                                                    <children>
+                                                                                        <Label text="Treść">
+                                                                                            <font>
+                                                                                                <Font name="System Bold" size="27.0" />
+                                                                                            </font>
+                                                                                        </Label>
+                                                                                    </children>
+                                                                                </GridPane>
+                                                                                <WebView fx:id="strony" prefHeight="637.0" prefWidth="584.0" GridPane.rowIndex="4" />
+                                                                                <GridPane GridPane.rowIndex="1">
+                                                                                    <columnConstraints>
+                                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.0" minWidth="10.0" prefWidth="57.0" />
+                                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="517.0" minWidth="10.0" prefWidth="517.0" />
+                                                                                    </columnConstraints>
+                                                                                    <rowConstraints>
+                                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                    </rowConstraints>
+                                                                                    <children>
+                                                                                        <Label text="Autor:">
+                                                                                            <font>
+                                                                                                <Font name="System Bold" size="18.0" />
+                                                                                            </font>
+                                                                                        </Label>
+                                                                                        <JFXTextField fx:id="autor_wiadomosc" GridPane.columnIndex="1" />
+                                                                                    </children>
+                                                                                </GridPane>
+                                                                            </children>
+                                                                        </GridPane>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="875.0" prefWidth="687.0">
+                                                                    <children>
+                                                                        <GridPane layoutX="1.0" prefHeight="875.0" prefWidth="613.0">
+                                                                            <columnConstraints>
+                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            </columnConstraints>
+                                                                            <rowConstraints>
+                                                                                <RowConstraints maxHeight="278.0" minHeight="0.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints maxHeight="814.0" minHeight="10.0" prefHeight="705.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints maxHeight="814.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                                                                            </rowConstraints>
+                                                                            <children>
+                                                                                <Label text="Wiadomość">
+                                                                                    <font>
+                                                                                        <Font name="System Bold" size="27.0" />
+                                                                                    </font>
+                                                                                </Label>
+                                                                                <TableView fx:id="tabela3" prefHeight="673.0" prefWidth="657.0" GridPane.rowIndex="1">
+                                                                                    <columns>
+                                                                                        <TableColumn fx:id="kolumna23" prefWidth="127.0" text="Tytuł" />
+                                                                                        <TableColumn fx:id="kolumna24" prefWidth="104.0" text="Przeczytane" />
+                                                                                        <TableColumn fx:id="kolumna25" prefWidth="81.0" text="Zaznacz" />
+                                                                                        <TableColumn fx:id="kolumna26" prefWidth="152.0" text="Pobierz załącznik" />
+                                                                                        <TableColumn fx:id="kolumna27" prefWidth="148.0" text="Usuń" />
+                                                                                    </columns>
+                                                                                </TableView>
+                                                                                <JFXButton fx:id="historia2" mnemonicParsing="false" prefHeight="35.0" prefWidth="179.0" text="Usuń wiadomość" GridPane.rowIndex="2" />
+                                                                            </children>
+                                                                        </GridPane>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </items>
+                                                        </SplitPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Pliki HTML">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <WebView fx:id="strona" layoutX="20.0" layoutY="63.0" prefHeight="718.0" prefWidth="1192.0" />
+                                                        <JFXButton fx:id="podglad" layoutX="534.0" layoutY="800.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="162.0" text="Podgląd" />
+                                                        <Label layoutX="502.0" layoutY="14.0" text="Dokument HTML">
+                                                            <font>
+                                                                <Font name="System Bold" size="28.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Dochody firmy">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <LineChart fx:id="dochody" layoutX="222.0" layoutY="93.0" prefHeight="665.0" prefWidth="925.0">
+                                                            <xAxis>
+                                                                <CategoryAxis label="Miesiące" side="BOTTOM" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis label="Mieeśęczne dochody (zł)" side="LEFT" />
+                                                            </yAxis>
+                                                        </LineChart>
+                                                        <JFXButton fx:id="wykres1" layoutX="596.0" layoutY="789.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="178.0" text="Zyski w ciągu roku" />
+                                                        <Label layoutX="398.0" layoutY="40.0" text="Dochody firmy w danym miesiącu">
+                                                            <font>
+                                                                <Font name="System Bold" size="36.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <GridPane layoutX="12.0" layoutY="31.0" prefHeight="220.0" prefWidth="198.0">
+                                                            <children>
+                                                                <Label text="W miesiącu:">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="24.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label fx:id="l1" GridPane.rowIndex="1">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="18.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label text="Firma zarobiła:" GridPane.rowIndex="2">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="24.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label fx:id="l2" GridPane.rowIndex="3">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="18.0" />
+                                                                    </font>
+                                                                </Label>
+                                                            </children>
+                                                            <columnConstraints>
+                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                        </GridPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Dochód firmy na przestrzeni lat">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <BarChart fx:id="dochody2" layoutX="189.0" layoutY="92.0" prefHeight="648.0" prefWidth="966.0">
+                                                            <xAxis>
+                                                                <CategoryAxis label="Rok" side="BOTTOM" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis label="Dochody (zł)" side="LEFT" />
+                                                            </yAxis>
+                                                        </BarChart>
+                                                        <JFXButton fx:id="wykres2" layoutX="589.0" layoutY="766.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="178.0" text="Podgląd" />
+                                                        <Label layoutX="405.0" layoutY="14.0" text="Dochód firmy na przestrzeni lat" textAlignment="CENTER">
+                                                            <font>
+                                                                <Font name="System Bold" size="36.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <GridPane layoutX="16.0" layoutY="27.0" prefHeight="159.0" prefWidth="166.0">
+                                                            <children>
+                                                                <Label text="W roku:">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="18.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label text="Firma zarobiła:" GridPane.rowIndex="2">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="18.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label fx:id="l3" GridPane.rowIndex="1">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="18.0" />
+                                                                    </font></Label>
+                                                                <Label fx:id="l4" GridPane.rowIndex="3">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="18.0" />
+                                                                    </font></Label>
+                                                            </children>
+                                                            <columnConstraints>
+                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                        </GridPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Operacje na bazach danych">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="956.0" prefWidth="1229.0">
+                            <children>
+                                <TabPane prefHeight="963.0" prefWidth="1229.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="Baza danych pracowników">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="869.0" prefWidth="1229.0">
+                                                    <children>
+                                                        <SplitPane dividerPositions="0.20048899755501223, 0.6030969845150774" prefHeight="876.0" prefWidth="1229.0">
+                                                            <items>
+                                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                                    <children>
+                                                                        <TableView fx:id="tabela" layoutY="143.0" prefHeight="733.0" prefWidth="248.0">
+                                                                            <columns>
+                                                                                <TableColumn fx:id="kolumna2" prefWidth="38.0" text="Id" />
+                                                                                <TableColumn fx:id="kolumna1" prefWidth="103.0" text="Imie" />
+                                                                                <TableColumn fx:id="kolumna3" prefWidth="109.0" text="Nazwisko" />
+                                                                                <TableColumn fx:id="kolumna4" prefWidth="135.0" text="Pesel" />
+                                                                                <TableColumn fx:id="kolumna5" prefWidth="135.0" text="Telefon" />
+                                                                                <TableColumn fx:id="kolumna6" prefWidth="135.0" text="Adres" />
+                                                                                <TableColumn fx:id="kolumna7" prefWidth="135.0" text="Dział" />
+                                                                                <TableColumn fx:id="kolumna8" prefWidth="135.0" text="Stanowisko" />
+                                                                                <TableColumn fx:id="kolumna9" prefWidth="135.0" text="E-mail" />
+                                                                                <TableColumn fx:id="kolumna10" prefWidth="135.0" text="Identyfikator" />
+                                                                                <TableColumn fx:id="kolumna12" prefWidth="135.0" text="Hasło" />
+                                                                                <TableColumn fx:id="kolumna22" prefWidth="135.0" text="Usuń pracownika" />
+                                                                                <TableColumn fx:id="kolumna41" prefWidth="135.0" text="Zeruj urlop" />
+                                                                            </columns>
+                                                                        </TableView>
+                                                                        <GridPane layoutX="24.0" layoutY="14.0" prefHeight="112.0" prefWidth="198.0">
+                                                                            <columnConstraints>
+                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            </columnConstraints>
+                                                                            <rowConstraints>
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            </rowConstraints>
+                                                                            <children>
+                                                                                <Label prefHeight="26.0" prefWidth="174.0" text="Podgląd bazy danych">
+                                                                                    <font>
+                                                                                        <Font name="System Bold" size="17.0" />
+                                                                                    </font>
+                                                                                </Label>
+                                                                                <JFXButton fx:id="baza1" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Odśwież baze pracowników" GridPane.rowIndex="1" />
+                                                                            </children>
+                                                                        </GridPane>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="156.0">
+                                                                    <children>
+                                                                        <GridPane layoutX="41.0" layoutY="91.0" prefHeight="691.0" prefWidth="401.0">
+                                                                            <columnConstraints>
+                                                                                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            </columnConstraints>
+                                                                            <rowConstraints>
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            </rowConstraints>
+                                                                            <children>
+                                                                                <Label contentDisplay="CENTER" text="Imie:" textAlignment="CENTER">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label text="Nazwisko:" GridPane.rowIndex="1">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label text="Pesel:" GridPane.rowIndex="2">
+                                                                                    <font>
+                                                                                        <Font size="14.0" />
+                                                                                    </font></Label>
+                                                                                <Label text="Telefon:" GridPane.rowIndex="3">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label text="Adres:" GridPane.rowIndex="4">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label text="Dział:" GridPane.rowIndex="5">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label text="Stanowisko:" GridPane.rowIndex="6">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label text="E-mail:" GridPane.rowIndex="7">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label text="Identyfikator:" GridPane.rowIndex="8">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label text="Hasło:" GridPane.rowIndex="9">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label fx:id="limię" GridPane.columnIndex="1">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label fx:id="lnazwisko" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label fx:id="lpesel" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label fx:id="ltelefon" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label fx:id="ladres" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label fx:id="ldzial" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label fx:id="lstanowisko" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label fx:id="lemail" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label fx:id="lidentyfikator" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label fx:id="lhaslo" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font></Label>
+                                                                                <Label text="Wykorzystany urlop:" GridPane.rowIndex="10">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font>
+                                                                                </Label>
+                                                                                <Label fx:id="lurlop" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                                                                    <font>
+                                                                                        <Font size="13.0" />
+                                                                                    </font>
+                                                                                </Label>
+                                                                            </children>
+                                                                        </GridPane>
+                                                                        <Label layoutX="120.0" layoutY="22.0" prefHeight="53.0" prefWidth="246.0" text="Dane pracownika">
+                                                                            <font>
+                                                                                <Font name="System Bold" size="30.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="152.0">
+                                                                    <children>
+                                                                        <GridPane layoutY="69.0" prefHeight="731.0" prefWidth="482.0">
+                                                                            <children>
+                                                                                <JFXTextField fx:id="ai" maxWidth="-Infinity" prefHeight="25.0" prefWidth="174.0" promptText="Podaj imię" />
+                                                                                <JFXButton fx:id="aimie" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Imię" GridPane.columnIndex="1" />
+                                                                                <JFXTextField fx:id="an" maxWidth="-Infinity" prefHeight="25.0" prefWidth="173.0" promptText="Podaj nazwisko" GridPane.rowIndex="1" />
+                                                                                <JFXButton fx:id="anazwisko" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Nazwisko" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                                <JFXTextField fx:id="at" maxWidth="-Infinity" prefHeight="25.0" prefWidth="173.0" promptText="Podaj telefon" GridPane.rowIndex="7" />
+                                                                                <JFXButton fx:id="atelefon" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Telefon" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                                                <JFXTextField fx:id="ah" maxWidth="-Infinity" prefHeight="25.0" prefWidth="174.0" promptText="Podaj nowe hasło" GridPane.rowIndex="8" />
+                                                                                <JFXButton fx:id="ahaslo" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Hasło" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                                                <JFXButton fx:id="astanowisko" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Stanowisko" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                                                                <JFXTextField fx:id="ape" maxWidth="-Infinity" prefHeight="25.0" prefWidth="173.0" promptText="Podaj Pesel" GridPane.rowIndex="2" />
+                                                                                <JFXTextField fx:id="aa" maxWidth="-Infinity" prefHeight="25.0" prefWidth="173.0" promptText="Podaj Adres" GridPane.rowIndex="3" />
+                                                                                <JFXTextField fx:id="ama" maxWidth="-Infinity" prefHeight="25.0" prefWidth="173.0" promptText="Podaj E-mail" GridPane.rowIndex="5" />
+                                                                                <JFXButton fx:id="apesel" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Pesel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                                <JFXButton fx:id="aadres" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Adras" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                                <JFXButton fx:id="adział" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Dział" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                                                <JFXButton fx:id="amail" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj E-mail" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                                                <JFXButton fx:id="aidentyfikator" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Identyfikator" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                                                <JFXTextField fx:id="aide" maxWidth="-Infinity" prefHeight="25.0" prefWidth="173.0" promptText="Podaj Identyfikator" GridPane.rowIndex="6" />
+                                                                                <ComboBox fx:id="ad" prefHeight="25.0" prefWidth="174.0" promptText="Dział" GridPane.rowIndex="4" />
+                                                                                <ComboBox fx:id="as" prefHeight="25.0" prefWidth="178.0" promptText="Stanowisko" GridPane.rowIndex="10" />
+                                                                                <JFXTextField fx:id="powtorz_haslo1" maxWidth="-Infinity" prefHeight="25.0" prefWidth="176.0" promptText="Powtórz hasło" GridPane.rowIndex="9" />
+                                                                            </children>
+                                                                            <columnConstraints>
+                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            </columnConstraints>
+                                                                            <rowConstraints>
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            </rowConstraints>
+                                                                        </GridPane>
+                                                                        <Label layoutX="155.0" layoutY="24.0" prefHeight="32.0" prefWidth="184.0" text="Aktualizacja bazy">
+                                                                            <font>
+                                                                                <Font name="System Bold" size="22.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <JFXButton fx:id="awszystko" layoutX="155.0" layoutY="807.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj wszystkie dane" />
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </items>
+                                                        </SplitPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Baza danych pojazdów">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <SplitPane dividerPositions="0.6456140350877193" orientation="VERTICAL" prefHeight="876.0" prefWidth="1229.0">
+                                                            <items>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="436.0" prefWidth="536.0">
+                                                                    <children>
+                                                                        <SplitPane dividerPositions="0.6894865525672371" layoutX="-2.0" layoutY="-1.0" prefHeight="565.0" prefWidth="1229.0">
+                                                                            <items>
+                                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="188.0" prefWidth="132.0">
+                                                                                    <children>
+                                                                                        <GridPane layoutX="8.0" layoutY="59.0" prefHeight="495.0" prefWidth="368.0">
+                                                                                            <columnConstraints>
+                                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                            </columnConstraints>
+                                                                                            <rowConstraints>
+                                                                                                <RowConstraints maxHeight="437.0" minHeight="10.0" prefHeight="407.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints maxHeight="176.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                                                                                            </rowConstraints>
+                                                                                            <children>
+                                                                                                <ImageView fx:id="obraz" fitHeight="421.0" fitWidth="364.0" pickOnBounds="true" preserveRatio="true" />
+                                                                                                <JFXTextField fx:id="drogazs" GridPane.rowIndex="1" />
+                                                                                                <JFXButton fx:id="zmien_zdjęcie_pojazdu" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Zmień zdjęcie pojazdu" GridPane.rowIndex="2" />
+                                                                                            </children>
+                                                                                        </GridPane>
+                                                                                        <GridPane layoutX="433.0" layoutY="57.0" prefHeight="430.0" prefWidth="348.0">
+                                                                                            <columnConstraints>
+                                                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                            </columnConstraints>
+                                                                                            <rowConstraints>
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                            </rowConstraints>
+                                                                                            <children>
+                                                                                                <Label text="Marka:">
+                                                                                                    <font>
+                                                                                                        <Font size="13.0" />
+                                                                                                    </font></Label>
+                                                                                                <Label text="Model:" GridPane.rowIndex="1">
+                                                                                                    <font>
+                                                                                                        <Font size="13.0" />
+                                                                                                    </font></Label>
+                                                                                                <Label text="Rok:" GridPane.rowIndex="2">
+                                                                                                    <font>
+                                                                                                        <Font size="13.0" />
+                                                                                                    </font></Label>
+                                                                                                <Label text="Pojemność:" GridPane.rowIndex="3">
+                                                                                                    <font>
+                                                                                                        <Font size="13.0" />
+                                                                                                    </font></Label>
+                                                                                                <Label text="Przebieg:" GridPane.rowIndex="4">
+                                                                                                    <font>
+                                                                                                        <Font size="13.0" />
+                                                                                                    </font></Label>
+                                                                                                <Label text="Nr rejestracyjny:" GridPane.rowIndex="5">
+                                                                                                    <font>
+                                                                                                        <Font size="13.0" />
+                                                                                                    </font></Label>
+                                                                                                <Label text="Ubezpieczenie:" GridPane.rowIndex="6">
+                                                                                                    <font>
+                                                                                                        <Font size="13.0" />
+                                                                                                    </font></Label>
+                                                                                                <Label text="Uszkodzony:" GridPane.rowIndex="7">
+                                                                                                    <font>
+                                                                                                        <Font size="13.0" />
+                                                                                                    </font></Label>
+                                                                                                <Label text="Data zakupu:" GridPane.rowIndex="8">
+                                                                                                    <font>
+                                                                                                        <Font size="13.0" />
+                                                                                                    </font></Label>
+                                                                                                <Label fx:id="markal" GridPane.columnIndex="1" />
+                                                                                                <Label fx:id="modell" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                                                <Label fx:id="rokl" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                                                <Label fx:id="pojemnoscl" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                                                <Label fx:id="przebiegl" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                                                                <Label fx:id="nrrejestracyjnyl" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                                                                <Label fx:id="ubezpieczeniel" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                                                                <Label fx:id="uszkodzonyl" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                                                                <Label fx:id="data_zakupul" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                                                            </children>
+                                                                                        </GridPane>
+                                                                                        <JFXButton fx:id="zapisz_do_plikul" layoutX="521.0" layoutY="494.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Zapisz do pliku" />
+                                                                                        <Label layoutX="24.0" layoutY="14.0" text="Dane zasobu">
+                                                                                            <font>
+                                                                                                <Font name="System Bold" size="28.0" />
+                                                                                            </font>
+                                                                                        </Label>
+                                                                                    </children>
+                                                                                </AnchorPane>
+                                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="401.0">
+                                                                                    <children>
+                                                                                        <GridPane layoutY="44.0" prefHeight="468.0" prefWidth="381.0">
+                                                                                            <columnConstraints>
+                                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                            </columnConstraints>
+                                                                                            <rowConstraints>
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                                                                            </rowConstraints>
+                                                                                            <children>
+                                                                                                <JFXTextField fx:id="am" maxWidth="-Infinity" prefHeight="25.0" prefWidth="173.0" promptText="Podaj Marke" />
+                                                                                                <JFXButton fx:id="amarka" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Marke" GridPane.columnIndex="1" />
+                                                                                                <JFXButton fx:id="astan" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Stan" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                                                                <JFXTextField fx:id="ao" maxWidth="-Infinity" prefHeight="25.0" prefWidth="173.0" promptText="Podaj Ubezpieczenie" GridPane.rowIndex="6" />
+                                                                                                <JFXButton fx:id="aoc" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Ubezpieczenie" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                                                                <JFXTextField fx:id="ap" maxWidth="-Infinity" prefHeight="25.0" prefWidth="173.0" promptText="Podaj Przebieg" GridPane.rowIndex="7" />
+                                                                                                <JFXButton fx:id="aprzebieg" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Przebieg" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                                                                <JFXTextField fx:id="amo" maxWidth="-Infinity" prefHeight="25.0" prefWidth="173.0" promptText="Podaj Model" GridPane.rowIndex="1" />
+                                                                                                <JFXTextField fx:id="apo" maxWidth="-Infinity" prefHeight="25.0" prefWidth="173.0" promptText="Podaj Pojemność" GridPane.rowIndex="3" />
+                                                                                                <JFXTextField fx:id="anr" maxWidth="-Infinity" prefHeight="25.0" prefWidth="173.0" promptText="Podaj Nr rejestracyjny" GridPane.rowIndex="4" />
+                                                                                                <JFXButton fx:id="amodel" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Model" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                                                <JFXButton fx:id="arok" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Rok" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                                                <JFXButton fx:id="apojemnosc" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Pojemność" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                                                <JFXButton fx:id="arejestracja" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Nr rejestracyjny" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                                                                <JFXButton fx:id="arokzakupu" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj Rok zakupu" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                                                                <ComboBox fx:id="as2" prefHeight="25.0" prefWidth="173.0" promptText="Stan pojazdu" GridPane.rowIndex="5" />
+                                                                                                <DatePicker fx:id="arz" prefWidth="173.0" GridPane.rowIndex="8" />
+                                                                                                <DatePicker fx:id="ar" prefWidth="173.0" GridPane.rowIndex="2" />
+                                                                                            </children>
+                                                                                        </GridPane>
+                                                                                        <Label layoutX="143.0" layoutY="24.0" prefHeight="20.0" prefWidth="119.0" text="Aktualizacja bazy">
+                                                                                            <font>
+                                                                                                <Font name="System Bold" size="14.0" />
+                                                                                            </font>
+                                                                                        </Label>
+                                                                                        <JFXButton fx:id="awszystko2" layoutX="103.0" layoutY="521.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="173.0" text="Aktualizuj wszystkie dane" />
+                                                                                    </children>
+                                                                                </AnchorPane>
+                                                                            </items>
+                                                                        </SplitPane>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="429.0" prefWidth="631.0">
+                                                                    <children>
+                                                                        <TableView fx:id="tabela2" layoutX="309.0" prefHeight="307.0" prefWidth="919.0">
+                                                                            <columns>
+                                                                                <TableColumn fx:id="kolumna13" prefWidth="104.0" text="Id" />
+                                                                                <TableColumn fx:id="kolumna14" prefWidth="111.0" text="Marka" />
+                                                                                <TableColumn fx:id="kolumna15" prefWidth="131.0" text="Model" />
+                                                                                <TableColumn fx:id="kolumna16" prefWidth="75.0" text="Rok" />
+                                                                                <TableColumn fx:id="kolumna17" prefWidth="75.0" text="Pojemność" />
+                                                                                <TableColumn fx:id="kolumna18" prefWidth="108.0" text="Przebieg" />
+                                                                                <TableColumn fx:id="kolumna19" prefWidth="110.0" text="Nr rejestracyjny" />
+                                                                                <TableColumn fx:id="kolumna20" prefWidth="107.0" text="Ubezpieczenie" />
+                                                                                <TableColumn fx:id="kolumna21" prefWidth="102.0" text="Uszkodzony" />
+                                                                            </columns>
+                                                                        </TableView>
+                                                                        <Label layoutX="51.0" layoutY="106.0" prefHeight="32.0" prefWidth="223.0" text="Podgląd bazy danych">
+                                                                            <font>
+                                                                                <Font name="System Bold" size="22.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <JFXButton fx:id="baza2" layoutX="76.0" layoutY="146.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="179.0" text="Odśwież baze pojazdów" />
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </items>
+                                                        </SplitPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="ds" text="Dodawanie użytkownika/pojazdu">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <SplitPane dividerPositions="0.49229521492295214" layoutY="-1.0" prefHeight="878.0" prefWidth="1235.0">
+                                                            <items>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="876.0" prefWidth="675.0">
+                                                                    <children>
+                                                                        <Label layoutX="129.0" layoutY="34.0" text="Dodawanie użytkownika">
+                                                                            <font>
+                                                                                <Font name="System Bold" size="30.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <JFXButton fx:id="bdodaj1" layoutX="220.0" layoutY="783.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="190.0" text="Dodaj pracownika" />
+                                                                        <GridPane layoutX="93.0" layoutY="98.0" prefHeight="662.0" prefWidth="444.0">
+                                                                            <columnConstraints>
+                                                                                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="235.0" />
+                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="241.0" minWidth="10.0" prefWidth="234.0" />
+                                                                            </columnConstraints>
+                                                                            <rowConstraints>
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            </rowConstraints>
+                                                                            <children>
+                                                                                <JFXTextField fx:id="di" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj imie" GridPane.columnIndex="1" />
+                                                                                <JFXTextField fx:id="dn" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj nazwisko" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                                <JFXTextField fx:id="dt" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj telefon" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                                <JFXTextField fx:id="dh" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj hasło" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                                <JFXTextField fx:id="dpe" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj pesel" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                                                <JFXTextField fx:id="da" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj adres" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                                                <JFXTextField fx:id="de" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj e-mail" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                                                                <JFXTextField fx:id="did" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj identyfikator" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                                                                <Label text="Imie" />
+                                                                                <Label text="Nazwisko" GridPane.rowIndex="1" />
+                                                                                <Label text="Telefon" GridPane.rowIndex="2" />
+                                                                                <Label text="Hasło" GridPane.rowIndex="3" />
+                                                                                <Label text="Stanowisko" GridPane.rowIndex="5" />
+                                                                                <Label text="Pesel" GridPane.rowIndex="6" />
+                                                                                <Label text="Adres" GridPane.rowIndex="7" />
+                                                                                <Label text="Dział" GridPane.rowIndex="8" />
+                                                                                <Label text="E-mail" GridPane.rowIndex="9" />
+                                                                                <Label text="Identyfikator" GridPane.rowIndex="10" />
+                                                                                <JFXTextField fx:id="powtorz_haslo" maxWidth="-Infinity" prefWidth="150.0" promptText="Powtórz hasło" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                                                <Label text="Powtórz hasło" GridPane.rowIndex="4" />
+                                                                                <ComboBox fx:id="dsta" prefWidth="150.0" promptText="Stanowisko" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                                                <ComboBox fx:id="dd" prefWidth="150.0" promptText="Dział" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                                            </children>
+                                                                        </GridPane>
+                                                                    </children></AnchorPane>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="876.0" prefWidth="621.0">
+                                                                    <children>
+                                                                        <GridPane layoutX="118.0" layoutY="125.0" prefHeight="628.0" prefWidth="423.0">
+                                                                            <columnConstraints>
+                                                                                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            </columnConstraints>
+                                                                            <rowConstraints>
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            </rowConstraints>
+                                                                            <children>
+                                                                                <JFXTextField fx:id="dm" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj marke" GridPane.columnIndex="1" />
+                                                                                <JFXTextField fx:id="doc" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj Ubezpieczenie" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                                <JFXTextField fx:id="dprz" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj przebieg" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                                <JFXTextField fx:id="dmo" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj model" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                                                <JFXTextField fx:id="dpj" maxWidth="-Infinity" prefWidth="150.0" promptText="Podaj pojemność" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                                                <JFXTextField fx:id="dnr" maxWidth="-Infinity" prefHeight="33.0" prefWidth="163.0" promptText="Podaj nr rejestracyjny" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                                                <Label text="Marka" />
+                                                                                <Label text="Stan" GridPane.rowIndex="1" />
+                                                                                <Label text="Ubezpieczenie" GridPane.rowIndex="2" />
+                                                                                <Label text="Przebieg" GridPane.rowIndex="3" />
+                                                                                <Label text="Model" GridPane.rowIndex="4" />
+                                                                                <Label text="Rok" GridPane.rowIndex="5" />
+                                                                                <Label text="Pojemność" GridPane.rowIndex="7" />
+                                                                                <Label text="Nr rejestracyjny" GridPane.rowIndex="8" />
+                                                                                <Label text="Data zakupu" GridPane.rowIndex="6" />
+                                                                                <DatePicker fx:id="drokz" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                                                <ComboBox fx:id="dst" prefWidth="150.0" promptText="Stan pojazdu" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                                <DatePicker fx:id="dr" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                                            </children>
+                                                                        </GridPane>
+                                                                        <JFXButton fx:id="bdodaj2" layoutX="235.0" layoutY="767.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="190.0" text="Dodaj pojazd" />
+                                                                        <Label layoutX="172.0" layoutY="44.0" text="Dodawanie pojazdu">
+                                                                            <font>
+                                                                                <Font name="System Bold" size="30.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children></AnchorPane>
+                                                            </items>
+                                                        </SplitPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Usuwanie urzytkownika/pojazdu">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <SplitPane dividerPositions="0.4963325183374083" prefHeight="877.0" prefWidth="1229.0">
+                                                            <items>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                                    <children>
+                                                                        <GridPane layoutX="79.0" layoutY="135.0" prefHeight="419.0" prefWidth="451.0">
+                                                                            <columnConstraints>
+                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            </columnConstraints>
+                                                                            <rowConstraints>
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            </rowConstraints>
+                                                                            <children>
+                                                                                <Label text="Usuwanie pracownika">
+                                                                                    <font>
+                                                                                        <Font name="System Bold" size="30.0" />
+                                                                                    </font>
+                                                                                </Label>
+                                                                                <JFXButton fx:id="bu1" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" text="Usuń" GridPane.rowIndex="4" />
+                                                                                <JFXCheckBox fx:id="boxwp" checkedColor="#1d6cd3" mnemonicParsing="false" text="Usuń wiadomość związane z pracownikiem" unCheckedColor="#afb1b5" GridPane.rowIndex="2" />
+                                                                                <JFXCheckBox fx:id="boxpp" checkedColor="#1d6cd3" mnemonicParsing="false" text="Usuń pliki związane z pracownikiem" unCheckedColor="#afb1b5" GridPane.rowIndex="3" />
+                                                                                <GridPane prefHeight="84.0" prefWidth="551.0" GridPane.rowIndex="1">
+                                                                                    <columnConstraints>
+                                                                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                    </columnConstraints>
+                                                                                    <rowConstraints>
+                                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                    </rowConstraints>
+                                                                                    <children>
+                                                                                        <JFXTextField fx:id="uid" alignment="CENTER" maxWidth="-Infinity" promptText="Podaj identyfikator" GridPane.columnIndex="1" />
+                                                                                        <Label text="Identyfikator">
+                                                                                            <font>
+                                                                                                <Font size="13.0" />
+                                                                                            </font></Label>
+                                                                                    </children>
+                                                                                </GridPane>
+                                                                            </children>
+                                                                        </GridPane>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                                    <children>
+                                                                        <GridPane layoutX="73.0" layoutY="109.0" prefHeight="462.0" prefWidth="465.0">
+                                                                            <columnConstraints>
+                                                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            </columnConstraints>
+                                                                            <rowConstraints>
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            </rowConstraints>
+                                                                            <children>
+                                                                                <JFXButton fx:id="bu2" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" text="Usuń" GridPane.rowIndex="3" />
+                                                                                <JFXCheckBox fx:id="boxpop" checkedColor="#1d6cd3" mnemonicParsing="false" text="Usuń pliki związane z pojazdem" unCheckedColor="#afb1b5" GridPane.rowIndex="2" />
+                                                                                <Label text="Usuwanie pojazdu">
+                                                                                    <font>
+                                                                                        <Font name="System Bold" size="30.0" />
+                                                                                    </font>
+                                                                                </Label>
+                                                                                <GridPane GridPane.rowIndex="1">
+                                                                                    <columnConstraints>
+                                                                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                    </columnConstraints>
+                                                                                    <rowConstraints>
+                                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                    </rowConstraints>
+                                                                                    <children>
+                                                                                        <JFXTextField fx:id="uid2" alignment="CENTER" maxWidth="-Infinity" promptText="Podaj id pojazdu" GridPane.columnIndex="1" />
+                                                                                        <Label fx:id="numer_pojazdu_do_usunięcia" text="Numer id pojazdu do usunięcia">
+                                                                                            <font>
+                                                                                                <Font size="13.0" />
+                                                                                            </font></Label>
+                                                                                    </children>
+                                                                                </GridPane>
+                                                                            </children>
+                                                                        </GridPane>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </items>
+                                                        </SplitPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

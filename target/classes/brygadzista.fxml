@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.HTMLEditor?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" stylesheets="@styl.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="brygadzista">
+    <children>
+        <MenuBar prefHeight="29.0" prefWidth="1300.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Opcje">
+                    <items>
+                        <MenuItem fx:id="zamknij" mnemonicParsing="false" text="Zamknij program" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Pomoc">
+                    <items>
+                        <MenuItem fx:id="opis" mnemonicParsing="false" text="Opis zakładek" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="O programie">
+                    <items>
+                        <MenuItem fx:id="autorzy" mnemonicParsing="false" text="Autorzy" />
+                        <MenuItem fx:id="wersja" mnemonicParsing="false" text="Wersja programu" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TabPane layoutY="28.0" prefHeight="872.0" prefWidth="1300.0">
+            <tabs>
+                <Tab text="Podgląd danych pracowników ">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="809.0" prefWidth="1300.0">
+                            <children>
+                                <TableView fx:id="tabela" layoutX="16.0" layoutY="61.0" prefHeight="699.0" prefWidth="1269.0">
+                                    <columns>
+                                        <TableColumn fx:id="kolumna2" prefWidth="75.0" text="Id" />
+                                        <TableColumn fx:id="kolumna1" prefWidth="87.0" text="Imie" />
+                                        <TableColumn fx:id="kolumna3" prefWidth="91.0" text="Nazwisko" />
+                                        <TableColumn fx:id="kolumna4" prefWidth="115.0" text="Pesel" />
+                                        <TableColumn fx:id="kolumna5" prefWidth="132.0" text="Telefon" />
+                                        <TableColumn fx:id="kolumna6" prefWidth="146.0" text="Adres" />
+                                        <TableColumn fx:id="kolumna7" prefWidth="156.0" text="Dział" />
+                                        <TableColumn fx:id="kolumna8" prefWidth="161.0" text="Stanowisko" />
+                                        <TableColumn fx:id="kolumna9" prefWidth="158.0" text="E-mail" />
+                                        <TableColumn fx:id="kolumna10" prefWidth="143.0" text="Identyfikator" />
+                                    </columns>
+                                </TableView>
+                                <JFXButton fx:id="wstecz" layoutX="561.0" layoutY="774.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="178.0" text="Wyloguj się" />
+                                <Label layoutX="567.0" layoutY="14.0" text="Pracownicy">
+                                    <font>
+                                        <Font name="System Bold" size="31.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Przydzielenie pojazdu oraz regionu dostawy dla Kierowcy">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="tabela2" layoutX="289.0" layoutY="45.0" prefHeight="455.0" prefWidth="271.0">
+                                    <columns>
+                                        <TableColumn fx:id="kolumna13" prefWidth="54.0" text="Id" />
+                                        <TableColumn fx:id="kolumna14" prefWidth="101.0" text="Imie" />
+                                        <TableColumn fx:id="kolumna15" prefWidth="114.0" text="Nazwisko" />
+                                    </columns>
+                                </TableView>
+                                <TableView fx:id="tabela3" layoutX="568.0" layoutY="45.0" prefHeight="455.0" prefWidth="272.0">
+                                    <columns>
+                                        <TableColumn fx:id="kolumna16" prefWidth="55.0" text="Id" />
+                                        <TableColumn fx:id="kolumna11" prefWidth="104.0" text="Marka" />
+                                        <TableColumn fx:id="kolumna12" prefWidth="112.0" text="Model" />
+                                    </columns>
+                                </TableView>
+                                <TableView fx:id="tabela4" layoutX="9.0" layoutY="45.0" prefHeight="777.0" prefWidth="271.0">
+                                    <columns>
+                                        <TableColumn fx:id="kolumna17" prefWidth="52.0" text="Id" />
+                                        <TableColumn fx:id="kolumna18" prefWidth="217.0" text="Nazwa" />
+                                    </columns>
+                                </TableView>
+                                <GridPane layoutX="9.0" layoutY="14.0" prefHeight="30.0" prefWidth="829.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Pojazdy" GridPane.columnIndex="2">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font></Label>
+                                        <Label text="Firmy">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font></Label>
+                                        <Label prefHeight="27.0" prefWidth="98.0" text="Pracownicy" GridPane.columnIndex="1">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font></Label>
+                                    </children>
+                                </GridPane>
+                                <GridPane layoutX="859.0" layoutY="43.0" prefHeight="434.0" prefWidth="412.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <DatePicker fx:id="data" prefHeight="35.0" prefWidth="203.0" GridPane.rowIndex="7" />
+                                        <JFXTextField fx:id="pracownik" promptText="Pracownik" />
+                                        <JFXTextField fx:id="region" promptText="Region" GridPane.rowIndex="1" />
+                                        <JFXTextField fx:id="pojazd" promptText="Pojazd" GridPane.rowIndex="2" />
+                                        <JFXButton fx:id="przydział2" mnemonicParsing="false" prefHeight="35.0" prefWidth="203.0" text="Przydziel" GridPane.rowIndex="4" />
+                                        <JFXButton fx:id="zprzydział" mnemonicParsing="false" prefHeight="35.0" prefWidth="203.0" text="Zapisz przydział" GridPane.rowIndex="8" />
+                                        <JFXTextField fx:id="uwagi" promptText="Uwagi" GridPane.rowIndex="3" />
+                                        <Label fx:id="zajete" GridPane.rowIndex="6">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXButton fx:id="przydzialypokaz" prefHeight="35.0" prefWidth="203.0" text="Zatwierdź przydziały" GridPane.rowIndex="5" />
+                                    </children>
+                                </GridPane>
+                                <HTMLEditor fx:id="przydział" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="289.0" layoutY="506.0" prefHeight="323.0" prefWidth="998.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Tworzenie raportów">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="85.0" layoutY="10.0" text="Pracownicy">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font></Label>
+                                <TableView fx:id="tabela5" layoutX="14.0" layoutY="46.0" prefHeight="771.0" prefWidth="270.0">
+                                    <columns>
+                                        <TableColumn fx:id="kolumna19" prefWidth="91.0" text="Imie" />
+                                        <TableColumn fx:id="kolumna20" prefWidth="84.0" text="Nazwisko" />
+                                        <TableColumn fx:id="kolumna21" prefWidth="94.0" text="Identyfikator" />
+                                    </columns>
+                                </TableView>
+                                <JFXTextArea fx:id="raport" layoutX="613.0" layoutY="57.0" prefHeight="365.0" prefWidth="674.0" />
+                                <HTMLEditor fx:id="eraport" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="614.0" layoutY="432.0" prefHeight="398.0" prefWidth="673.0" />
+                                <GridPane layoutX="290.0" layoutY="-1.0" prefHeight="835.0" prefWidth="317.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="153.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="170.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="315.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="348.0" minHeight="10.0" prefHeight="118.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="289.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="225.0" minHeight="7.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="190.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <JFXButton fx:id="craport" mnemonicParsing="false" prefHeight="34.0" prefWidth="179.0" text="Przenieś tekst do edycji" GridPane.rowIndex="12" />
+                                        <JFXButton fx:id="uraport" mnemonicParsing="false" prefHeight="34.0" prefWidth="179.0" text="Utwórz raport" GridPane.rowIndex="8" />
+                                        <JFXButton fx:id="uraport2" mnemonicParsing="false" prefHeight="34.0" prefWidth="179.0" text="Generuj formatowany pdf " GridPane.rowIndex="13" />
+                                        <JFXButton fx:id="generuj_pdf_pracownicy_dni" buttonType="RAISED" prefHeight="34.0" prefWidth="179.0" text="Generuj pdf z danych" GridPane.rowIndex="9" />
+                                        <JFXCheckBox fx:id="czy_html" text="Dołącz tekst po formatowaniu" GridPane.rowIndex="11" />
+                                        <JFXButton fx:id="wraport2" mnemonicParsing="false" prefHeight="34.0" prefWidth="179.0" text="Wyślij raport" GridPane.rowIndex="10" />
+                                        <GridPane>
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <JFXTextField fx:id="imier" />
+                                                <JFXTextField fx:id="nazwiskor" GridPane.columnIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <GridPane GridPane.rowIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <JFXTextField fx:id="identyfikatorr" alignment="CENTER" GridPane.rowIndex="1" />
+                                                <Label text="Identyfikator">
+                                                    <font>
+                                                        <Font name="System Bold" size="16.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </GridPane>
+                                        <GridPane GridPane.rowIndex="3">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <JFXTextField fx:id="liczba_dni" GridPane.columnIndex="1" />
+                                                <Label text="Przepracowane dni:">
+                                                    <font>
+                                                        <Font name="System Bold" size="16.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </GridPane>
+                                        <GridPane GridPane.rowIndex="4">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Urlop w dniu">
+                                                    <font>
+                                                        <Font name="System Bold" size="16.0" />
+                                                    </font></Label>
+                                                <DatePicker fx:id="datau" prefHeight="34.0" prefWidth="179.0" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <GridPane prefWidth="317.0" GridPane.rowIndex="5">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="19.0" minHeight="0.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Urlop w dniach" GridPane.rowIndex="2">
+                                                    <font>
+                                                        <Font name="System Bold" size="16.0" />
+                                                    </font>
+                                                </Label>
+                                                <JFXButton fx:id="usun_urlop_dzien" prefHeight="34.0" prefWidth="179.0" text="Usuń dzień urlopu" GridPane.rowIndex="1" />
+                                                <JFXButton fx:id="dodaj_urlop_dzien" prefHeight="34.0" prefWidth="179.0" text="Dodaj dzień urlopu" />
+                                            </children>
+                                        </GridPane>
+                                        <GridPane prefHeight="70.0" prefWidth="317.0" GridPane.rowIndex="6">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Od:">
+                                                    <font>
+                                                        <Font name="System Bold" size="14.0" />
+                                                    </font></Label>
+                                                <Label text="Do:" GridPane.columnIndex="1">
+                                                    <font>
+                                                        <Font name="System Bold" size="14.0" />
+                                                    </font></Label>
+                                                <DatePicker fx:id="datauod" prefHeight="34.0" GridPane.rowIndex="1" />
+                                                <DatePicker fx:id="dataudo" prefHeight="34.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <GridPane GridPane.rowIndex="7">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <JFXButton fx:id="dodaj_wpis" prefHeight="34.0" prefWidth="179.0" text="Dodaj wpis" GridPane.rowIndex="2" />
+                                                <JFXButton fx:id="dodaj_urlop_ciagly" prefHeight="34.0" prefWidth="179.0" text="Dodaj urlop" />
+                                                <JFXButton fx:id="usun_urlop_ciagly" prefHeight="34.0" prefWidth="179.0" text="Usuń urlop" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <GridPane GridPane.rowIndex="2">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <JFXTextField fx:id="id_pojazdu" alignment="CENTER" GridPane.rowIndex="1" />
+                                                <Label text="Id pojazdu">
+                                                    <font>
+                                                        <Font name="System Bold" size="16.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </GridPane>
+                                <GridPane layoutX="615.0" layoutY="7.0" prefHeight="42.0" prefWidth="671.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.0" minWidth="0.0" prefWidth="57.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="466.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="148.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Tytuł:">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXTextField fx:id="tytul_dokumentu2" prefHeight="25.0" prefWidth="474.0" GridPane.columnIndex="1" />
+                                        <ComboBox fx:id="rodzaj_dokumentu2" prefHeight="29.0" prefWidth="149.0" promptText="Rodzaj dokumentu" GridPane.columnIndex="2" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Podgląd dokumentów">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <GridPane layoutX="11.0" layoutY="2.0" prefHeight="468.0" prefWidth="1252.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="273.0" minHeight="0.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="773.0" minHeight="10.0" prefHeight="433.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Drugi dokument" GridPane.columnIndex="1">
+                                            <font>
+                                                <Font name="System Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="Pierwszy dokument">
+                                            <font>
+                                                <Font name="System Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <WebView fx:id="eraport2" prefHeight="472.0" prefWidth="640.0" GridPane.rowIndex="1" />
+                                        <WebView fx:id="eraport3" prefHeight="628.0" prefWidth="625.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                                <GridPane layoutX="11.0" layoutY="475.0" prefHeight="350.0" prefWidth="1253.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1082.0" minWidth="10.0" prefWidth="1062.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="639.0" minWidth="10.0" prefWidth="227.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="163.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="324.0" minHeight="10.0" prefHeight="309.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <HTMLEditor fx:id="htmlraport" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="200.0" prefWidth="506.0" GridPane.rowIndex="1" />
+                                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <JFXButton fx:id="dokumentpdf1" prefHeight="49.0" prefWidth="180.0" text="Otwórz pierwszy dokument" GridPane.rowIndex="1" />
+                                                <JFXButton fx:id="dokumentpdf2" prefHeight="49.0" prefWidth="180.0" text="Otwórz drugi dokument" GridPane.rowIndex="2" />
+                                                <JFXButton fx:id="wraport" prefHeight="49.0" prefWidth="180.0" text="Wyślij raport pdf" />
+                                            </children>
+                                        </GridPane>
+                                        <ComboBox fx:id="rodzaj_dokumentu" prefHeight="29.0" prefWidth="180.0" promptText="Rodzaj dokumentu" GridPane.columnIndex="1" />
+                                        <GridPane prefHeight="0.0" prefWidth="1062.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="52.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1010.0" minWidth="10.0" prefWidth="1010.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <JFXTextField fx:id="tytul_dokumentu" prefHeight="0.0" prefWidth="1010.0" GridPane.columnIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <Label text="Tytuł:">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Poczta">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <GridPane layoutX="22.0" layoutY="6.0" prefHeight="815.0" prefWidth="574.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="162.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="162.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="331.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="621.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="695.0" minHeight="10.0" prefHeight="662.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane GridPane.rowIndex="2">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="55.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="522.0" minWidth="10.0" prefWidth="522.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Tytuł:">
+                                                    <font>
+                                                        <Font name="System Bold" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <JFXTextField fx:id="tw" GridPane.columnIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <GridPane prefHeight="543.0" prefWidth="584.0" GridPane.rowIndex="3">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="129.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="447.0" minWidth="10.0" prefWidth="439.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Data i godzina:">
+                                                    <font>
+                                                        <Font name="System Bold" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <JFXTextField fx:id="dtw" GridPane.columnIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <GridPane prefHeight="108.0" prefWidth="577.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Treść">
+                                                    <font>
+                                                        <Font name="System Bold" size="31.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </GridPane>
+                                        <WebView fx:id="strony" prefHeight="655.0" prefWidth="574.0" GridPane.rowIndex="4" />
+                                        <GridPane GridPane.rowIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.0" minWidth="10.0" prefWidth="57.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="517.0" minWidth="10.0" prefWidth="517.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Autor:">
+                                                    <font>
+                                                        <Font name="System Bold" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <JFXTextField fx:id="autor_wiadomosc" GridPane.columnIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </GridPane>
+                                <GridPane layoutX="619.0" layoutY="3.0" prefHeight="813.0" prefWidth="660.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="278.0" minHeight="0.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="814.0" minHeight="10.0" prefHeight="705.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="814.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Wiadomość">
+                                            <font>
+                                                <Font name="System Bold" size="31.0" />
+                                            </font>
+                                        </Label>
+                                        <TableView fx:id="tabela6" prefHeight="673.0" prefWidth="657.0" GridPane.rowIndex="1">
+                                            <columns>
+                                                <TableColumn fx:id="kolumna22" prefWidth="178.0" text="Tytuł" />
+                                                <TableColumn fx:id="kolumna23" prefWidth="106.0" text="Przeczytane" />
+                                                <TableColumn fx:id="kolumna24" prefWidth="98.0" text="Zaznacz" />
+                                                <TableColumn fx:id="kolumna25" prefWidth="133.0" text="Pobierz załącznik" />
+                                                <TableColumn fx:id="kolumna26" prefWidth="144.0" text="Usuń" />
+                                            </columns>
+                                        </TableView>
+                                        <JFXButton fx:id="wiadomosc_usun" mnemonicParsing="false" prefHeight="35.0" prefWidth="179.0" text="Usuń wiadomość" GridPane.rowIndex="2" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Wyślij wiadomość">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="292.0" layoutY="7.0" text="Wiadomość">
+                                    <font>
+                                        <Font name="System Bold" size="36.0" />
+                                    </font>
+                                </Label>
+                                <GridPane layoutX="818.0" layoutY="47.0" prefHeight="225.0" prefWidth="393.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Tytuł:">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="Załącznik:" GridPane.rowIndex="2">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXTextField fx:id="tytul_wiadomosc" GridPane.rowIndex="1" />
+                                        <JFXTextField fx:id="droga_zalacznik" GridPane.rowIndex="3" />
+                                    </children>
+                                </GridPane>
+                                <GridPane layoutX="853.0" layoutY="282.0" prefHeight="535.0" prefWidth="332.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <JFXButton fx:id="wiadomość3" mnemonicParsing="false" prefHeight="40.0" prefWidth="369.0" text="Wyślij wiadomość do Kierownictwa" GridPane.rowIndex="1" />
+                                        <JFXButton fx:id="zalacznik" prefHeight="40.0" prefWidth="369.0" text="Dodaj dokument do załącznika" />
+                                        <JFXButton fx:id="wiadomość4" mnemonicParsing="false" prefHeight="40.0" prefWidth="369.0" text="Wyślij do pracownika" GridPane.rowIndex="8" />
+                                        <JFXTextField fx:id="imie_nazwisko" alignment="CENTER" GridPane.rowIndex="7" />
+                                        <JFXButton fx:id="wyslij_raport_do_kierownictwa" prefHeight="40.0" prefWidth="369.0" text="Wyślij raport do Kierownictwa" GridPane.rowIndex="2" />
+                                        <JFXButton fx:id="wyslij_wiadomosc_do_ksiegowosc" prefHeight="40.0" prefWidth="369.0" text="Wyślij wiadomość do Księgowość" GridPane.rowIndex="3" />
+                                        <ComboBox fx:id="dzialbox" prefHeight="40.0" prefWidth="369.0" promptText="Wybierz dział" GridPane.rowIndex="5" />
+                                        <ComboBox fx:id="pracownikbox" prefHeight="40.0" prefWidth="369.0" promptText="Wybierz identyfikator pracownika" GridPane.rowIndex="6" />
+                                        <JFXButton fx:id="wyslij_raport_do_ksiegowosc" prefHeight="40.0" prefWidth="369.0" text="Wyślij raport do Księgowość" GridPane.rowIndex="4" />
+                                    </children>
+                                </GridPane>
+                                <HTMLEditor fx:id="wiadomość2" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="14.0" layoutY="67.0" prefHeight="761.0" prefWidth="789.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Wiadomość dział">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </children>
+                                </AnchorPane>
+                                <TableView fx:id="tabela8" layoutX="629.0" layoutY="26.0" prefHeight="795.0" prefWidth="657.0">
+                                    <columns>
+                                        <TableColumn fx:id="kolumna34" prefWidth="254.0" text="Tytuł" />
+                                        <TableColumn fx:id="kolumna35" prefWidth="125.0" text="Przeczytane" />
+                                        <TableColumn fx:id="kolumna36" prefWidth="146.0" text="Data" />
+                                        <TableColumn fx:id="kolumna37" prefWidth="131.0" text="Pobierz wiadomość" />
+                                    </columns>
+                                </TableView>
+                                <GridPane layoutX="12.0" layoutY="9.0" prefHeight="814.0" prefWidth="606.0">
+                                    <children>
+                                        <GridPane GridPane.rowIndex="1">
+                                            <children>
+                                                <Label text="Tytuł:">
+                                                    <font>
+                                                        <Font name="System Bold" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <JFXTextField fx:id="tw2" GridPane.columnIndex="1" />
+                                            </children>
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="55.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="522.0" minWidth="10.0" prefWidth="522.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                        </GridPane>
+                                        <GridPane prefHeight="543.0" prefWidth="584.0" GridPane.rowIndex="2">
+                                            <children>
+                                                <Label text="Data i godzina:">
+                                                    <font>
+                                                        <Font name="System Bold" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <JFXTextField fx:id="dtw2" GridPane.columnIndex="1" />
+                                            </children>
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="129.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="447.0" minWidth="10.0" prefWidth="439.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                        </GridPane>
+                                        <GridPane prefHeight="108.0" prefWidth="577.0">
+                                            <children>
+                                                <Label text="Treść">
+                                                    <font>
+                                                        <Font name="System Bold" size="31.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                        </GridPane>
+                                        <WebView fx:id="strony2" prefHeight="655.0" prefWidth="574.0" GridPane.rowIndex="3" />
+                                    </children>
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="162.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="331.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="621.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="695.0" minHeight="10.0" prefHeight="662.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Dokumenty dział">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="476.0" text="Dokument">
+                                    <font>
+                                        <Font name="System Bold" size="30.0" />
+                                    </font>
+                                </Label>
+                                <TableView fx:id="tabela7" layoutX="550.0" layoutY="314.0" prefHeight="510.0" prefWidth="722.0">
+                                    <columns>
+                                        <TableColumn fx:id="kolumna27" prefWidth="148.0" text="Tytuł" />
+                                        <TableColumn fx:id="kolumna28" prefWidth="164.0" text="Data" />
+                                        <TableColumn fx:id="kolumna29" prefWidth="130.0" text="Rodzaj dokumentu" />
+                                        <TableColumn fx:id="kolumna30" prefWidth="69.0" text="Zaznacz " />
+                                        <TableColumn fx:id="kolumna31" prefWidth="130.0" text="Generuj PDF" />
+                                        <TableColumn fx:id="kolumna32" prefWidth="130.0" text="Pobierz raport" />
+                                        <TableColumn fx:id="kolumna33" prefWidth="130.0" text="Usuń dokument" />
+                                    </columns>
+                                </TableView>
+                                <WebView fx:id="web" layoutX="20.0" layoutY="315.0" prefHeight="508.0" prefWidth="520.0" />
+                                <GridPane layoutX="19.0" layoutY="47.0" prefHeight="259.0" prefWidth="1283.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1077.0" minWidth="10.0" prefWidth="1068.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="621.0" minWidth="10.0" prefWidth="184.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane GridPane.columnIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <JFXButton fx:id="podglad2" mnemonicParsing="false" prefHeight="46.0" prefWidth="186.0" text="Podgląd dokumentów" />
+                                                <JFXButton fx:id="usun_zaznaczone_dokumenty" prefHeight="46.0" prefWidth="186.0" text="Usuń zaznaczone dokumenty" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <WebView fx:id="dokument_podglad" prefHeight="200.0" prefWidth="200.0" />
+                                    </children>
+                                </GridPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Dane pracownika">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <GridPane layoutX="123.0" layoutY="742.0" prefHeight="77.0" prefWidth="1096.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <JFXButton fx:id="dane2" mnemonicParsing="false" prefHeight="51.0" prefWidth="222.0" text="Obejrzyj swoje dane" />
+                                        <Label text="Podaj login :" GridPane.columnIndex="1">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font></Label>
+                                        <JFXTextField fx:id="login" maxWidth="-Infinity" promptText="Podaj login" GridPane.columnIndex="2" />
+                                        <Label text="Podaj hasło :" GridPane.columnIndex="3">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font></Label>
+                                        <JFXTextField fx:id="haslo" maxWidth="-Infinity" prefHeight="25.0" prefWidth="149.0" promptText="Podaj hasło" GridPane.columnIndex="4" />
+                                    </children>
+                                </GridPane>
+                                <Label layoutX="621.0" layoutY="20.0" text="Twoje dane">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                                <GridPane layoutX="408.0" layoutY="70.0" prefHeight="631.0" prefWidth="561.0">
+                                    <children>
+                                        <Label contentDisplay="CENTER" text="Imie" textAlignment="CENTER">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label text="Nazwisko" GridPane.rowIndex="1">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label text="Pesel" GridPane.rowIndex="2">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label text="Telefon" GridPane.rowIndex="3">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label text="Adres" GridPane.rowIndex="4">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label text="Dział" GridPane.rowIndex="5">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label text="Stanowisko" GridPane.rowIndex="6">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label text="E-mail" GridPane.rowIndex="7">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label text="Identyfikator" GridPane.rowIndex="8">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label text="Hasło" GridPane.rowIndex="9">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label fx:id="limię" GridPane.columnIndex="1">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label fx:id="lnazwisko" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label fx:id="lpesel" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label fx:id="ltelefon" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label fx:id="ladres" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label fx:id="ldzial" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label fx:id="lstanowisko" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label fx:id="lemail" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label fx:id="lidentyfikator" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label fx:id="lhaslo" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font></Label>
+                                        <Label text="Dni urlopu na tym stanowisku" GridPane.rowIndex="10">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="Wykorzystane dni urlopu" GridPane.rowIndex="11">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="ldu" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="lduw" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Pojazdy podgląd dokumentów">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="837.0" text="Dokument">
+                                    <font>
+                                        <Font name="System Bold" size="30.0" />
+                                    </font>
+                                </Label>
+                                <GridPane layoutX="12.0" layoutY="9.0" prefHeight="814.0" prefWidth="521.0">
+                                    <children>
+                                        <GridPane GridPane.rowIndex="2">
+                                            <children>
+                                                <Label text="Tytuł:">
+                                                    <font>
+                                                        <Font name="System Bold" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <JFXTextField fx:id="tw_pojazdy" prefHeight="33.0" prefWidth="460.0" GridPane.columnIndex="1" />
+                                            </children>
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="58.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="522.0" minWidth="10.0" prefWidth="463.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                        </GridPane>
+                                        <GridPane prefHeight="543.0" prefWidth="584.0" GridPane.rowIndex="3">
+                                            <children>
+                                                <Label text="Data i godzina:">
+                                                    <font>
+                                                        <Font name="System Bold" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <JFXTextField fx:id="dtw_pojazdy" GridPane.columnIndex="1" />
+                                            </children>
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="135.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="447.0" minWidth="10.0" prefWidth="386.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                        </GridPane>
+                                        <GridPane prefHeight="108.0" prefWidth="577.0">
+                                            <children>
+                                                <Label text="Treść">
+                                                    <font>
+                                                        <Font name="System Bold" size="31.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                        </GridPane>
+                                        <WebView fx:id="strony_pojazdy" prefHeight="655.0" prefWidth="574.0" GridPane.rowIndex="4" />
+                                        <GridPane GridPane.rowIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="64.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="457.0" minWidth="10.0" prefWidth="457.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Autor:">
+                                                    <font>
+                                                        <Font name="System Bold" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <JFXTextField fx:id="autor_pojazd" GridPane.columnIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="162.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="331.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="331.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="621.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="695.0" minHeight="10.0" prefHeight="662.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                </GridPane>
+                                <TableView fx:id="tabela9" layoutX="550.0" layoutY="52.0" prefHeight="705.0" prefWidth="733.0">
+                                    <columns>
+                                        <TableColumn fx:id="kolumna38" prefWidth="148.0" text="Tytuł" />
+                                        <TableColumn fx:id="kolumna39" prefWidth="164.0" text="Data" />
+                                        <TableColumn fx:id="kolumna40" prefWidth="69.0" text="Zaznacz " />
+                                        <TableColumn fx:id="kolumna41" prefWidth="130.0" text="Generuj PDF" />
+                                        <TableColumn fx:id="kolumna42" prefWidth="130.0" text="Pobierz raport" />
+                                        <TableColumn fx:id="kolumna43" prefWidth="130.0" text="Usuń dokument" />
+                                    </columns>
+                                </TableView>
+                                <JFXButton fx:id="usun_zaznaczone_dokumenty_pojazdy" layoutX="823.0" layoutY="769.0" prefHeight="46.0" prefWidth="179.0" text="Usuń zaznaczone dokumenty" />
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
